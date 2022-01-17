@@ -1,5 +1,5 @@
-import Container from '@mui/material/Container'
 import withProtected from '../../hoc/withProtected'
+import AuthLayout from '../../components/Layout/Authenticated'
 import { useUser } from '../../context/user'
 
 const Dashboard = () => {
@@ -7,13 +7,13 @@ const Dashboard = () => {
   const { email, uid } = user
 
   return (
-    <Container>
+    <AuthLayout title="Dashboard">
       <div>
         <p>Email: <b>{email}</b></p>
         <br />
         <p>UID: <b>{uid}</b></p>
       </div>
-    </Container>
+    </AuthLayout>
   )
 }
 
