@@ -4,8 +4,9 @@ import Features from '../components/Pages/Home/Features'
 import FAQ from '../components/Pages/Home/FAQ'
 import Footer from '../components/Pages/Home/Footer'
 import LoginModal from '../components/Pages/Home/LoginModal'
+import withUnprotected from '../hoc/withUnprotected'
 
-export default function Home() {
+const Home = () => {
   const [open, setOpen] = useState(false)
   return (
     <>
@@ -17,3 +18,5 @@ export default function Home() {
     </>
   )
 }
+
+export default withUnprotected(Home)

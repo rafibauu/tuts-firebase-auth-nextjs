@@ -4,6 +4,7 @@ import CssBaseline from '@mui/material/CssBaseline'
 import { CacheProvider } from '@emotion/react'
 import theme from '../utils/theme'
 import createEmotionCache from '../utils/createEmotionCache'
+import { UserProvider } from '../context/user'
 import AuthStateChangeProvider from '../context/auth'
 import '../styles/globals.css'
 
@@ -19,8 +20,11 @@ function MyApp(props) {
       </Head>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <AuthStateChangeProvider />
-        <Component {...pageProps} />
+        <UserProvider>
+          <AuthStateChangeProvider>
+            <Component {...pageProps} />
+          </AuthStateChangeProvider>
+        </UserProvider>
       </ThemeProvider>
     </CacheProvider>
   )
