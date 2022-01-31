@@ -5,6 +5,8 @@ const GetErrorMessage = (type) => {
   switch (type) {
     case 'minLength':
       return 'Jumlah karakter tidak memenuhi minimum.'
+    case 'validate':
+      return 'Format tidak sesuai.'
     case 'required':
     default:
       return 'Mohon mengisi field.'

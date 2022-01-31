@@ -46,3 +46,12 @@ export const GetSignInErrorMessage = (code) => {
       return 'Email atau password salah'
   }
 }
+
+export const GetSignUpErrorMessage = (code) => {
+  switch (code) {
+    case 'auth/email-already-in-use':
+      return 'Email telah terdaftar.'
+    default:
+      return 'Terjadi kesalahan saat proses sign up.'
+  }
+}
