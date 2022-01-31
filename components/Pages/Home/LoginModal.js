@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Link from 'next/link'
 import Image from 'next/image'
 import { useForm } from 'react-hook-form'
 import Alert from '@mui/material/Alert'
@@ -142,9 +143,11 @@ const LoginModal = ({ open, CloseModal }) => {
             <Typography variant="body1" component="span">
               New to Netflix?
             </Typography>
-            <Typography variant="body1" color="primary" component="a" href="#">
-              &nbsp;Sign up now.
-            </Typography>
+            <Link href="/signup" passHref>
+              <Typography variant="body1" color="primary" component="a" href="#">
+                &nbsp;Sign up now.
+              </Typography>
+            </Link>
           </Grid>
           <Grid>
             <Typography variant="caption">
